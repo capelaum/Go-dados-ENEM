@@ -19,15 +19,13 @@ func main() {
 
 	var opcao int
 	fmt.Println("Escolha uma opção para extrair dados:")
-	fmt.Println("Digite -1 para sair")
+	fmt.Println("Digite qualquer outra tecla para sair")
 	fmt.Println("\n1) Sem Paralelismo")
 	fmt.Println("2) Com Paralelismo")
 	fmt.Print("\n-> ")
 	fmt.Scan(&opcao)
 
 	switch opcao {
-	case -1:
-		os.Exit(3)
 	case 1:
 		years = extract.Data(years)
 	case 2:
