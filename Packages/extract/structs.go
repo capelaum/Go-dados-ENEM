@@ -51,7 +51,7 @@ func NewYears() []Year {
 		Year:        2017,
 		States:      states17,
 		CsvFilePath: csvFilePath17,
-		Total:       6731342, 
+		Total:       6731342,
 		Races:       races17,
 	}
 
@@ -99,12 +99,12 @@ func NewStates() []State {
 //NewRaces construtor de array de Raças
 func NewRaces() [6]Race {
 	races := [6]Race{
-		Race{Name: "Raça Não Informada", RaceType: 0},
-		Race{Name: "Raça Branca", RaceType: 1},
-		Race{Name: "Raça Preta", RaceType: 2},
-		Race{Name: "Raça Parda", RaceType: 3},
-		Race{Name: "Raça Amarela", RaceType: 4},
-		Race{Name: "Raça Indigena", RaceType: 5},
+		{Name: "Raça Não Informada", RaceType: 0},
+		{Name: "Raça Branca", RaceType: 1},
+		{Name: "Raça Preta", RaceType: 2},
+		{Name: "Raça Parda", RaceType: 3},
+		{Name: "Raça Amarela", RaceType: 4},
+		{Name: "Raça Indigena", RaceType: 5},
 	}
 	return races
 }
