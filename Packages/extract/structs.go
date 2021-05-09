@@ -51,7 +51,7 @@ func NewYears() []Year {
 		Year:        2017,
 		States:      states17,
 		CsvFilePath: csvFilePath17,
-		Total:       6731342, // total de registros
+		Total:       6731342, 
 		Races:       races17,
 	}
 

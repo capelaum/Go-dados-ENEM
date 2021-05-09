@@ -40,7 +40,7 @@ func YearsMenu(years []Year) {
 func MenuStates(states []State) {
 	for {
 		fmt.Println("Escolha de qual UF deseja visualizar dados: ")
-		fmt.Printf("Digite -1 para sair\n\n")
+		fmt.Printf("Digite -1 para voltar\n\n")
 		for i := range states {
 			fmt.Printf("%s ", states[i].Sigla)
 		}
@@ -49,7 +49,6 @@ func MenuStates(states []State) {
 		var UF string
 		fmt.Scan(&UF)
 
-		// verifica se existe UF no arrays de structs states
 		if Contains(states, UF) == true {
 			for i := range states {
 				if UF == states[i].Sigla {
@@ -57,7 +56,7 @@ func MenuStates(states []State) {
 					MenuRaces(states[i])
 				}
 			}
-		} 
+		}
 
 		if UF == "-1" {
 			break
@@ -78,10 +77,11 @@ func MenuRaces(state State) {
 	if opcao == "n" {
 		return
 	}
+
 	for {
 		fmt.Printf("\n*****************************************\n")
 		fmt.Println("Escolha a raça.")
-		fmt.Println("Digite -1 para sair.")
+		fmt.Println("Digite -1 para voltar.")
 		fmt.Printf("\n0-Todas Raças\n1-Não informada\n2-Branca\n3-Preta\n4-Parda\n5-Amarela\n6-Indígena\n")
 		fmt.Print("\n-> ")
 

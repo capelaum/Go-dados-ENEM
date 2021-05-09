@@ -29,7 +29,7 @@ func CsvReader(csvFilePath string) (*csv.Reader, os.FileInfo) {
 	return reader, fileInfo
 }
 
-//FileInfo - Pega algumas informações do arquivo CSV
+// FileInfo - Pega algumas informações do arquivo CSV
 func FileInfo(csvFilePath string) int {
 	reader, fileInfo := CsvReader(csvFilePath)
 	total := 0

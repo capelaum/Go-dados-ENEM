@@ -19,25 +19,24 @@ func Data(years []Year) []Year {
 
 	fmt.Println("Extraindo dados..")
 
-	// loop pelos anos
 	for i := range years {
 		reader, _ := CsvReader(years[i].CsvFilePath) // abre arquivo de cada ano
 		count := 0
 
-		// leitura de linha a linha do registro
 		for /* i := 0; i < 500000; i++ */ {
 
 			// Processa os dados linha a linha dos datasets
 			recordLine, err := reader.Read()
 
 			if err == io.EOF {
-				break // chegou ao final do registro
-			} 
-			if err != nil { //checa por outros erros
+				break
+			}
+
+			if err != nil {
 				fmt.Println("An error encountered ::", err)
 			}
 			count++
-			
+
 			// Pega dados de cada estado
 			for j := range years[i].States {
 				if years[i].States[j].Sigla == recordLine[5] {
@@ -89,13 +88,13 @@ func DataParallel(years *[]Year) {
 				getData(
 					reader,
 					&(*years)[i],
-					(totalRecords/workers)*j,     // inicio do pedaço
-					(totalRecords/workers)*(j+1), // final do pedaço
+					(totalRecords/workers) * j,     // inicio do pedaço
+					(totalRecords/workers) * (j+1), // final do pedaço
 				)
 			}
 		}(i)
 	}
-	
+
 	wg.Wait()
 
 	for i := range *years {
